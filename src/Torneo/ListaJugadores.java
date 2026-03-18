@@ -57,43 +57,51 @@ public class ListaJugadores {
             e.printStackTrace();
         }
     }
-    public void jugadoresAlojados(){
+    public void jugadoresAlojados() {
         try {
-            FileWriter fw1 = new FileWriter("src/Torneo/alojados.txt");
-            fw1.write("-------------ALOJADOS MELIÁ----------------\n");
-            fw1.write("RANKING\t--\tNOMBRE\n");
+            PrintWriter pw = new PrintWriter(new BufferedWriter(
+                    new FileWriter("src/Torneo/alojados.txt")));
+
+            pw.println("-------------ALOJADOS MELIÁ----------------");
+            pw.println("RANKING\t--\tNOMBRE\n");
+
             System.out.println("-------------ALOJADOS MELIÁ----------------");
-            System.out.println("RANKING" +"\t--\t" +"NOMBRE\n");
+            System.out.println("RANKING\t--\tNOMBRE\n");
+
             for (Jugador j : jugadores.values()) {
                 if (j.isAlojado()) {
-                    String linea=j.getRank() + "\t--\t" + j.getNombre();
-                    fw1.write( linea + "\n");
+                    String linea = j.getRank() + "\t--\t" + j.getNombre();
+                    pw.println(linea);
                     System.out.println(linea);
                 }
             }
 
-            fw1.close();
+            pw.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void jugadoresValencianos(){
+    public void jugadoresValencianos() {
         try {
-            FileWriter fw1 = new FileWriter("src/Torneo/jugadoresCV.txt");
-            fw1.write("-------------JUGADORES C.VALENCIANA----------------");
-            fw1.write("\n RANKING" +"\t--\t" +"NOMBRE\n");
+            BufferedWriter bw = new BufferedWriter(new FileWriter("src/Torneo/jugadoresCV.txt"));
+            PrintWriter pw = new PrintWriter(bw);
+
+            pw.println("-------------JUGADORES C.VALENCIANA----------------");
+            pw.println("RANKING\t--\tNOMBRE\n");
+
             System.out.println("-------------JUGADORES C.VALENCIANA----------------");
-            System.out.println("RANKING" +"\t--\t" +"NOMBRE\n");
+            System.out.println("RANKING\t--\tNOMBRE\n");
+
             for (Jugador j : jugadores.values()) {
                 if (j.isCv()) {
-                    String linea=j.getRank() + "\t--\t" + j.getNombre();
-                    fw1.write( linea + "\n");
+                    String linea = j.getRank() + "\t--\t" + j.getNombre();
+                    pw.println(linea);
                     System.out.println(linea);
                 }
             }
 
-            fw1.close();
+            pw.close();
 
         } catch (IOException e) {
             e.printStackTrace();
