@@ -1,5 +1,11 @@
 package Supermercado;
 
+import Torneo.Jugador;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class Supermercado {
@@ -10,13 +16,28 @@ public class Supermercado {
     public Supermercado() {
         catalogo = new HashMap<>();
         ticket = new LinkedHashSet<>();
+        try {
+            BufferedReader br=new BufferedReader(new FileReader("src/supermercado/Catalogo.txt"));
+            String linea = null;
+            while ((linea = br.readLine()) != null) {
 
-        catalogo.put("avena", new Producto("avena", 2.21));
-        catalogo.put("garbanzos", new Producto("garbanzos", 2.39));
-        catalogo.put("tomate", new Producto("tomate", 1.59));
-        catalogo.put("jengibre", new Producto("jengibre", 3.13));
-        catalogo.put("quinoa", new Producto("quinoa", 4.50));
-        catalogo.put("guisantes", new Producto("guisantes", 1.60));
+                String[] partes = linea.split(";");
+                if (partes.length < 3) continue;
+
+                try {
+                    String nombre = partes[1].trim();
+                    Double precio = Double.valueOf(partes[2]);
+                    catalogo.put(nombre, new Producto(nombre, precio));
+                } catch (NumberFormatException e) {
+                    continue;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public Map<String, Producto> getCatalogo() {

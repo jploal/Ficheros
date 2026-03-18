@@ -1,0 +1,10 @@
+1;tomate;1.59
+2;arroz;1.03
+3;avena;2.21
+4;quinoa;4.50
+5;jengibre;3.13
+6;guisantes;1.60
+7;garbanzos;3.45
+8;huevos;3.62
+9;leche;1.12
+10;refresco;0.99

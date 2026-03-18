@@ -57,7 +57,7 @@ public class Jugador {
         }else{
             this.cv = false;
         }
-        if (info.endsWith("H")||info.endsWith("PH") || info.endsWith("PHCV")){
+        if (info.contains("H")){
             this.alojado = true;
         }else{
             this.alojado = false;

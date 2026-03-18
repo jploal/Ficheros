@@ -37,7 +37,7 @@ public class ListaJugadores {
                 }
 
                 String[] partes = linea.split(";");
-                if (partes.length < 8) continue; // línea incompleta
+                if (partes.length < 8) continue;
 
                 try {
                     int rank = Integer.parseInt(partes[0].trim());
