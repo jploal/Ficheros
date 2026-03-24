@@ -6,6 +6,9 @@ public class Jugador {
     private String info;//7
     private boolean alojado;
     private boolean cv;
+    private int posicion;
+    private int eloFide;
+    private double puntos;
 
     public int getRank() {
 
@@ -47,8 +50,28 @@ public class Jugador {
     public void setCv(boolean cv) {
         this.cv = cv;
     }
+    public int getPosicion() {
+        return posicion;
+    }
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
+    public int getEloFide() {
+        return eloFide;
+    }
+    public void setEloFide(int eloFide) {
+        this.eloFide = eloFide;
+    }
 
-    Jugador(int rank, String nombre, String info) {
+    public double getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(double puntos) {
+        this.puntos = puntos;
+    }
+
+    Jugador(int rank, String nombre, String info,int eloFide) {
         this.rank = rank;
         this.nombre = nombre;
         this.info=info;
@@ -62,5 +85,6 @@ public class Jugador {
         }else{
             this.alojado = false;
         }
+        this.eloFide = eloFide;
     }
 }

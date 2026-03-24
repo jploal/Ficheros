@@ -13,13 +13,16 @@ public class main {
                 1 - Lista total de Jugadores
                 2 - Jugadores alojados Meliá
                 3 - Jugadores de la C.Valenciana
-                4 - Salir del programa
+                4 - Clasificación
+                5 - Salir del programa
                 ---------------------------------
                 """);
     }
     public static void main(String[] args) {
         ListaJugadores lista = new ListaJugadores();
         lista.cargarDesdeArchivo("src/Torneo/jugadores.txt");
+        lista.cargarPosicion("src/Torneo/ClasificacionAjedrez.csv");
+
         boolean salir=false;
         Scanner sc = new Scanner(System.in);
         while (!salir) {
@@ -29,7 +32,7 @@ public class main {
                 int eleccion = sc.nextInt();
                 sc.nextLine();
 
-                if (eleccion < 1 || eleccion > 4) {
+                if (eleccion < 1 || eleccion > 5) {
                     System.out.println("Opción no válida");
                     continue;
                 }
@@ -37,8 +40,9 @@ public class main {
                 switch (eleccion) {
                     case 1 ->lista.mostrarJugadores();
                     case 2 ->lista.jugadoresAlojados();
-                    case 3 -> lista.jugadoresValencianos();
-                    case 4 ->salir = true;
+                    case 3 ->lista.jugadoresValencianos();
+                    case 4 ->lista.clasificacion();
+                    case 5 -> salir=true;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Introduce los números que haya en el menú");
