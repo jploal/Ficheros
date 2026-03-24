@@ -1,0 +1,41 @@
+--------------------------------------------------
+            JUGADORES C.VALENCIANA          
+--------------------------------------------------
+RANKING    NOMBRE                                  
+
+--------------------------------------------------
+4          Ynojosa Aponte, Felix Jose              
+
+8          Diaz Velandia, Jose Manuel              
+
+11         Torres Sanchez, Jose                    
+
+12         Mingarro Carceller, Sergi               
+
+13         Ibanez Aullana, Ramon                   
+
+19         Bas Mas, Miguel                         
+
+24         Jordan Martinez, Miguel                 
+
+31         Jordan Martinez, David                  
+
+40         Munoz Osete, Marcos                     
+
+42         Sanchez Barbado, Carlos                 
+
+47         Bascunana Sanchez, Pablo                
+
+49         Gonzalez Aguirre, Luis                  
+
+52         Gonzalez Lopez, Lucas I                 
+
+54         Beneyto De Ramon, Guillermo             
+
+59         Gimeno Simo, Sergio                     
+
+60         Bukharkov, Stepan                       
+
+69         Gerona Maura, Jesus                     
+
+--------------------------------------------------
